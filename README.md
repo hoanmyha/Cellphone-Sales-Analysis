@@ -77,6 +77,7 @@ Relationship Logic
 To satisfy MySQL indexing requirements, ID columns were converted to VARCHAR(10) before assigning primary keys.
 
 ## **🔑 Key Constraint Implementation **
+```sql
 ALTER TABLE phones
 MODIFY phone_id VARCHAR(10) NOT NULL;
 ALTER TABLE phones ADD PRIMARY KEY (phone_id);
@@ -94,7 +95,7 @@ ADD FOREIGN KEY (phone_id) REFERENCES phones(phone_id);
 
 ALTER TABLE sales
 ADD FOREIGN KEY (region_id) REFERENCES regions(region_id);
-
+```
 
 This enforces referential integrity and ensures consistent relational mapping.
 
