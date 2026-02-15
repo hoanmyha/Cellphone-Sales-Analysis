@@ -76,11 +76,11 @@ Relationship Logic
 
 To satisfy MySQL indexing requirements, ID columns were converted to VARCHAR(10) before assigning primary keys.
 
-## ** ERD
+## ERD
 
 <img width="526" height="618" alt="Screenshot 2025-12-01 140358" src="https://github.com/user-attachments/assets/0b437c49-dbd7-4667-9426-5ceeaa54b0b1" />
 
-## **🔑 Key Constraint Implementation **
+## 🔑 Key Constraint Implementation 
 ```sql
 ALTER TABLE phones
 MODIFY phone_id VARCHAR(10) NOT NULL;
@@ -103,7 +103,7 @@ ADD FOREIGN KEY (region_id) REFERENCES regions(region_id);
 
 This enforces referential integrity and ensures consistent relational mapping.
 
-## **📊 Analytical Coverage **
+## 📊 Analytical Coverage 
 🟢 Basic SQL
 
 - Filtering by release year
@@ -140,7 +140,7 @@ This enforces referential integrity and ensures consistent relational mapping.
 
 - Price segmentation (Budget / Mid-range / Premium)
 
-## **📈 Key Business Insights**
+## 📈 Key Business Insights
 
 - Samsung sells the most units overall and has the most diverse product lineup.
 
@@ -156,7 +156,7 @@ This enforces referential integrity and ensures consistent relational mapping.
 
 - No single phone model is sold across every continent.
 
-## **⚙️ Tech Stack**
+## ⚙️ Tech Stack
 
 - MySQL
 
