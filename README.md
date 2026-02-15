@@ -1,4 +1,4 @@
-# ** Global Cellphone Sales Analytics Database 📊**
+# **Global Cellphone Sales Analytics Database 📊**
 
 ## **📖 About **
 
