@@ -1,75 +1,81 @@
-Global Cellphone Sales Analytics Database 📊
-<h2><strong>📖 About</strong></h2>
+# ** Global Cellphone Sales Analytics Database 📊**
+## **📖 About **
 
-This project is a fully relational <strong>MySQL database</strong> built to analyze global cellphone sales performance across brands, regions, and time.
+This project is a fully relational MySQL database designed to analyze global cellphone sales performance across brands, regions, and time.
 
 It combines:
 
-Structured relational schema design
+- Structured relational schema design
 
-Many-to-Many relationship modeling
+- Many-to-Many relationship modeling
 
-Primary & foreign key enforcement
+- Primary & foreign key enforcement
 
-Advanced SQL analytics (CTEs, Window Functions)
+- Advanced SQL analytics (CTEs, Window Functions)
 
-Revenue, market share, and growth analysis
+- Revenue, market share, and growth analysis
 
-The objective is to simulate a real-world business intelligence workflow by transforming transactional data into actionable insights.
+The goal is to simulate a real-world business intelligence workflow — transforming transactional sales data into strategic insights.
 
-<h2><strong>🧱 Database Design</strong></h2>
+## **🧱 Database Design **
 
 The system consists of three core tables:
 
-<h3><strong>1️⃣ phones</strong></h3>
+1️⃣ phones
 
-phone_id (Primary Key)
+Stores product-level specifications.
 
-brand
+- phone_id (Primary Key)
 
-model
+- brand
 
-release_year
+- model
 
-base_price_usd
+- release_year
 
-storage_gb
+- base_price_usd
 
-<h3><strong>2️⃣ regions</strong></h3>
+- storage_gb
 
-region_id (Primary Key)
+2️⃣ regions
 
-country
+Stores geographic and distribution data.
 
-continent
+- region_id (Primary Key)
 
-main_distributor
+- country
 
-<h3><strong>3️⃣ sales (Junction Table)</strong></h3>
+- continent
 
-sale_id (Primary Key)
+- main_distributor
 
-phone_id (Foreign Key → phones)
+3️⃣ sales (Junction Table)
 
-region_id (Foreign Key → regions)
+Connects phones and regions.
 
-sale_date
+- sale_id (Primary Key)
 
-units_sold
+- phone_id (Foreign Key → phones)
 
-sale_price_per_unit_usd
+- region_id (Foreign Key → regions)
 
-<h3><strong>Relationship Logic</strong></h3>
+- sale_date
 
-One phone → many sales
+- units_sold
 
-One region → many sales
+- sale_price_per_unit_usd
 
-Phones ↔ Regions → Many-to-Many (via sales)
+Relationship Logic
+
+- One phone → many sales
+
+- One region → many sales
+
+- Phones ↔ Regions → Many-to-Many (via sales)
 
 To satisfy MySQL indexing requirements, ID columns were converted to VARCHAR(10) before assigning primary keys.
 
-<h2><strong>🔑 Key Constraint Implementation</strong></h2>
+## **🔑 Key Constraint Implementation **
 ALTER TABLE phones
 MODIFY phone_id VARCHAR(10) NOT NULL;
 ALTER TABLE phones ADD PRIMARY KEY (phone_id);
@@ -88,70 +94,68 @@ ADD FOREIGN KEY (phone_id) REFERENCES phones(phone_id);
 ALTER TABLE sales
 ADD FOREIGN KEY (region_id) REFERENCES regions(region_id);
 
-<h2><strong>📊 Analytical Coverage</strong></h2> <h3><strong>Basic SQL</strong></h3>
 
-Filtering and aggregation (COUNT, SUM, AVG)
+This enforces referential integrity and ensures consistent relational mapping.
 
-Sorting and conditional logic
+## **📊 Analytical Coverage **
+🟢 Basic SQL
 
-<h3><strong>Intermediate SQL</strong></h3>
+- Filtering by release year
 
-Multi-table JOINs
+- Aggregate metrics (COUNT, SUM, AVG)
 
-Revenue calculation (units_sold * sale_price_per_unit_usd)
+- Sorting and conditional queries
 
-Brand-level and region-level performance metrics
+🟡 Intermediate SQL
 
-Unsold product identification (LEFT JOIN)
+- Multi-table JOINs
 
-<h3><strong>Advanced SQL</strong></h3>
+- Revenue calculation (units_sold * price)
 
-RANK() – Revenue ranking within continents
+- Brand-level and country-level aggregation
 
-DENSE_RANK() – Top 3 models per continent
+- Identification of unsold products (LEFT JOIN)
 
-LAG() – Month-over-month revenue growth
+🔴 Advanced SQL
 
-Rolling 7-day sales average
+- RANK() → Revenue ranking within continents
 
-CTE-based revenue analysis
+- DENSE_RANK() → Top 3 models per continent
 
-Market share computation
+- LAG() → Month-over-month revenue growth
 
-Price segmentation (Budget / Mid-range / Premium)
+- Rolling 7-day average analysis
 
-<h2><strong>📈 Key Business Insights</strong></h2>
+- CTE-based modular revenue analysis
 
-<strong>Samsung</strong> sells the most units overall and has the most diverse product portfolio.
+- Market share calculation by continent
 
-<strong>Galaxy S24</strong> is the highest revenue-generating model.
+- Correlated subqueries
 
-<strong>Sony</strong> maintains the highest average base price (premium positioning).
+- Price segmentation (Budget / Mid-range / Premium)
 
-<strong>China</strong> has the highest average units sold per transaction.
+## **📈 Key Business Insights**
 
-<strong>UAE</strong> shows the strongest premium pricing power.
+- Samsung sells the most units overall and has the most diverse product lineup.
 
-<strong>Asia</strong> generates the highest total revenue globally.
+- Galaxy S24 is the highest revenue-generating model.
 
-No single model is sold across every continent.
+- Sony has the highest average base price (premium positioning).
 
-<h2><strong>⚙️ Tech Stack</strong></h2>
+- China shows the highest average units sold per transaction.
 
-MySQL
+- UAE demonstrates the strongest premium pricing power.
 
-SQL (DDL, DML, Window Functions, CTEs)
+- Asia generates the highest overall revenue.
 
-MySQL Workbench
+- No single phone model is sold across every continent.
 
-CSV Data Import
+## **⚙️ Tech Stack**
 
-<h2><strong>📂 Project Structure</strong></h2>
-Global-Cellphone-Sales-Database/
-│
-├── phones.csv
-├── regions.csv
-├── sales.csv
-├── Keys.sql
-├── SQL.sql
-└── README.md
+- MySQL
+
+- SQL (DDL, DML, Window Functions, CTEs)
+
+- MySQL Workbench
+
+- CSV Data Import
