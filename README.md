@@ -1,6 +1,6 @@
 # **Global Cellphone Sales Analytics Database 📊**
 
-## **📖 About **
+## 📖 About 
 
 This project is a fully relational MySQL database designed to analyze global cellphone sales performance across brands, regions, and time.
 
@@ -18,7 +18,7 @@ It combines:
 
 The goal is to simulate a real-world business intelligence workflow — transforming transactional sales data into strategic insights.
 
-## **🧱 Database Design **
+## 🧱 Database Design 
 
 The system consists of three core tables:
 
