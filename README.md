@@ -76,6 +76,10 @@ Relationship Logic
 
 To satisfy MySQL indexing requirements, ID columns were converted to VARCHAR(10) before assigning primary keys.
 
+## ** ERD
+
+<img width="526" height="618" alt="Screenshot 2025-12-01 140358" src="https://github.com/user-attachments/assets/0b437c49-dbd7-4667-9426-5ceeaa54b0b1" />
+
 ## **🔑 Key Constraint Implementation **
 ```sql
 ALTER TABLE phones
