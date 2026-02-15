@@ -1,0 +1,31 @@
+region_id,country,continent,currency_code,main_distributor
+R101,USA,North America,USD,TechData
+R102,India,Asia,INR,Ingram Micro
+R103,Germany,Europe,EUR,Also International
+R104,Brazil,South America,BRL,Allied
+R105,UK,Europe,GBP,Exertis
+R106,China,Asia,CNY,Digital China
+R107,Japan,Asia,JPY,SoftBank C&S
+R108,Canada,North America,CAD,Synnex
+R109,Australia,Australia,AUD,Dicker Data
+R110,France,Europe,EUR,TD Synnex France
+R111,South Korea,Asia,KRW,Samsung C&T
+R112,Mexico,North America,MXN,Grupo CVA
+R113,South Africa,Africa,ZAR,Mustek
+R114,Italy,Europe,EUR,Esprinet
+R115,Nigeria,Africa,NGN,TD Africa
+R116,Saudi Arabia,Asia,SAR,Al-Jammaz
+R117,Argentina,South America,ARS,Air Computers
+R118,Russia,Europe,RUB,Merlion
+R119,Indonesia,Asia,IDR,Erajaya
+R120,Spain,Europe,EUR,GTI Software
+R121,Turkey,Asia,TRY,Penta Teknoloji
+R122,Egypt,Africa,EGP,Raya Distribution
+R123,Vietnam,Asia,VND,Petrosetco
+R124,Poland,Europe,PLN,AB S.A.
+R125,Thailand,Asia,THB,Synnex Thailand
+R126,Netherlands,Europe,EUR,Copaco
+R127,Sweden,Europe,SEK,Pedab
+R128,UAE,Asia,AED,Redington
+R129,Kenya,Africa,KES,M.I.T.
+R130,New Zealand,Australia,NZD,Westcon-Comstor
